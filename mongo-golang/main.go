@@ -25,7 +25,7 @@ var clientOnce sync.Once
 func GetMongoClient() (*mongo.Client, error) {
     var err error
     clientOnce.Do(func() {
-        clientOptions := options.Client().ApplyURI("mongodb+srv://Shreyansh:Mdash%409987@mernatoz.c9nsqws.mongodb.net/?retryWrites=true&w=majority&appName=MERNAtoZ")
+        clientOptions := options.Client().ApplyURI("mongodb+srv://<Username>:<password>@<URI>?retryWrites=true&w=majority&appName=<AppName>")
         client, err = mongo.Connect(context.TODO(), clientOptions)
         if err != nil {
             log.Fatal(err)
